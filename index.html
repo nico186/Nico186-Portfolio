@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nico Marotta &mdash; Head of Institutional &amp; Ecosystem Operations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --cream: #f5f2ec; --dark: #1a1410; --rust: #c4541a; --rust-light: #e8733a; --charcoal: #2d2820; --warm-gray: #8a7f72; --border: #ddd5c8; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; }
+  nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(245,242,236,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; padding: 16px 48px; }
+  .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--dark); text-decoration: none; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-size: 0.85rem; color: var(--warm-gray); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--rust); }
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 140px 80px 80px; position: relative; overflow: hidden; }
+  .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--rust); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 24px; }
+  .hero-title { font-family: 'DM Serif Display', serif; font-size: clamp(3.5rem, 7vw, 7rem); line-height: 1.02; color: var(--dark); margin-bottom: 32px; max-width: 900px; }
+  .hero-title em { font-style: italic; color: var(--rust); }
+  .hero-sub { font-size: 1.15rem; color: var(--warm-gray); max-width: 580px; line-height: 1.7; margin-bottom: 48px; font-weight: 300; }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 56px; }
+  .tag { font-family: 'DM Mono', monospace; font-size: 0.72rem; padding: 6px 14px; border: 1px solid var(--border); color: var(--warm-gray); letter-spacing: 0.08em; }
+  .tag.active { background: var(--dark); color: var(--cream); border-color: var(--dark); }
+  .tag.rust { background: var(--rust); color: white; border-color: var(--rust); }
+  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn { padding: 14px 28px; font-size: 0.85rem; font-weight: 500; text-decoration: none; letter-spacing: 0.05em; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-primary { background: var(--dark); color: var(--cream); }
+  .btn-primary:hover { background: var(--rust); }
+  .btn-outline { border: 1px solid var(--dark); color: var(--dark); }
+  .btn-outline:hover { background: var(--dark); color: var(--cream); }
+  .hero-bg-text { position: absolute; right: -20px; bottom: 60px; font-family: 'DM Serif Display', serif; font-size: clamp(120px, 18vw, 220px); color: rgba(196,84,26,0.04); line-height: 1; pointer-events: none; white-space: nowrap; z-index: 0; }
+  section { padding: 120px 80px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--rust); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 16px; }
+  .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.1; margin-bottom: 48px; }
+  .section-title em { font-style: italic; color: var(--rust); }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+  .snapshot { background: var(--dark); color: var(--cream); }
+  .snapshot .section-label { color: var(--rust-light); }
+  .snapshot-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.08); margin-top: 40px; }
+  .snap-card { padding: 40px 32px; background: var(--charcoal); }
+  .snap-num { font-family: 'DM Serif Display', serif; font-size: 3.8rem; color: var(--cream); margin-bottom: 8px; line-height: 1; }
+  .snap-num span { color: var(--rust-light); }
+  .snap-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--warm-gray); letter-spacing: 0.12em; text-transform: uppercase; }
+  .brand-strip { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 48px; }
+  .brand-pill { padding: 8px 18px; border: 1px solid rgba(255,255,255,0.15); font-family: 'DM Mono', monospace; font-size: 0.75rem; color: rgba(255,255,255,0.6); letter-spacing: 0.06em; }
+  .brand-pill.highlight { background: var(--rust); border-color: var(--rust); color: white; }
+  .brand-pill.semi { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.8); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .about-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top; }
+  .about-content p { font-size: 1.05rem; color: var(--warm-gray); line-height: 1.8; margin-bottom: 20px; font-weight: 300; }
+  .about-content p strong { color: var(--dark); font-weight: 500; }
+  .origin-block { background: var(--charcoal); color: var(--cream); padding: 28px 32px; margin-top: 32px; border-left: 3px solid var(--rust); }
+  .origin-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--rust-light); letter-spacing: 0.15em; margin-bottom: 10px; }
+  .origin-text { font-size: 0.92rem; line-height: 1.7; color: rgba(245,242,236,0.8); }
+  .exp-grid { display: grid; gap: 0; }
+  .exp-item { display: grid; grid-template-columns: 200px 1fr; gap: 48px; padding: 40px 0; border-bottom: 1px solid var(--border); }
+  .exp-item:first-child { padding-top: 0; }
+  .exp-date { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--warm-gray); letter-spacing: 0.05em; padding-top: 4px; }
+  .exp-title { font-family: 'DM Serif Display', serif; font-size: 1.4rem; margin-bottom: 4px; }
+  .exp-org { font-size: 0.82rem; color: var(--warm-gray); margin-bottom: 16px; font-family: 'DM Mono', monospace; letter-spacing: 0.05em; }
+  .exp-desc { font-size: 0.95rem; color: var(--warm-gray); line-height: 1.75; margin-bottom: 16px; font-weight: 300; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-tag { font-family: 'DM Mono', monospace; font-size: 0.68rem; padding: 4px 10px; border: 1px solid var(--border); color: var(--warm-gray); letter-spacing: 0.05em; }
+  .skill-tag.primary { background: var(--dark); color: var(--cream); border-color: var(--dark); }
+  .skill-tag.rust { background: var(--rust); color: white; border-color: var(--rust); }
+  .badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.62rem; padding: 2px 8px; letter-spacing: 0.08em; margin-left: 8px; vertical-align: middle; position: relative; top: -1px; }
+  .badge-active { background: #16a34a; color: white; }
+  .badge-origin { background: #0ea5e9; color: white; }
+  .badge-dao { background: var(--rust); color: white; }
+  .badge-past { background: var(--warm-gray); color: white; }
+  .exp-group-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--rust); letter-spacing: 0.15em; text-transform: uppercase; padding: 32px 0 16px; border-bottom: 2px solid var(--rust); }
+  .irl-section { background: var(--charcoal); color: var(--cream); }
+  .irl-section .section-label { color: var(--rust-light); }
+  .irl-section .section-title { color: var(--cream); }
+  .irl-section .section-title em { color: var(--rust-light); }
+  .irl-intro { font-size: 1.05rem; color: rgba(245,242,236,0.7); line-height: 1.8; font-weight: 300; max-width: 800px; margin-bottom: 48px; }
+  .irl-stats { display: flex; gap: 40px; flex-wrap: wrap; margin-bottom: 56px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .irl-stat-num { font-family: 'DM Serif Display', serif; font-size: 2.8rem; color: var(--cream); line-height: 1; }
+  .irl-stat-num span { color: var(--rust-light); }
+  .irl-stat-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; margin-top: 4px; }
+  .pg { display: grid; gap: 3px; }
+  .pg img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+  .pg4 { grid-template-columns: repeat(4, 1fr); }
+  .pg5 { grid-template-columns: repeat(5, 1fr); }
+  .pg3 { grid-template-columns: repeat(3, 1fr); }
+  .mt { margin-top: 3px; }
+  .irl-capabilities { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+  .cap-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 24px 28px; }
+  .cap-title { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--rust-light); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+  .cap-desc { font-size: 0.88rem; color: rgba(245,242,236,0.6); line-height: 1.7; }
+  .adv-intro { font-size: 1.05rem; color: var(--warm-gray); line-height: 1.8; font-weight: 300; max-width: 800px; margin-bottom: 48px; }
+  .adv-pull { background: var(--dark); color: var(--cream); padding: 40px 48px; margin: 48px 0; font-family: 'DM Serif Display', serif; font-size: 1.6rem; line-height: 1.5; font-style: italic; border-left: 3px solid var(--rust); }
+  .vibe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .vibe-intro { font-size: 1.05rem; color: var(--warm-gray); line-height: 1.8; font-weight: 300; margin-bottom: 20px; }
+  .project-list { display: flex; flex-direction: column; gap: 0; margin-top: 24px; }
+  .project-item { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--border); }
+  .project-name { font-weight: 500; font-size: 0.95rem; }
+  .project-tech { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--warm-gray); }
+  .terminal { background: var(--charcoal); padding: 32px; font-family: 'DM Mono', monospace; font-size: 0.8rem; }
+  .terminal-bar { display: flex; gap: 6px; margin-bottom: 20px; }
+  .t-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .t-dot.red { background: #ff5f57; } .t-dot.yellow { background: #febc2e; } .t-dot.green { background: #28c840; }
+  .t-line { margin-bottom: 6px; color: rgba(245,242,236,0.7); }
+  .contact { background: var(--dark); color: var(--cream); text-align: center; }
+  .contact .section-title { color: var(--cream); }
+  .contact .section-title em { color: var(--rust-light); }
+  .contact-sub { font-size: 1.05rem; color: rgba(245,242,236,0.6); max-width: 500px; margin: 0 auto 48px; line-height: 1.7; font-weight: 300; }
+  .social-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-bottom: 48px; }
+  .social-link { display: flex; align-items: center; gap: 8px; padding: 12px 20px; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; font-family: 'DM Mono', monospace; transition: all 0.2s; }
+  .social-link:hover { border-color: var(--rust); color: var(--rust); }
+  .calendly-cta { display: inline-flex; align-items: center; gap: 10px; padding: 16px 36px; background: var(--rust); color: white; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: background 0.2s; margin-bottom: 16px; }
+  .calendly-cta:hover { background: var(--rust-light); }
+  .calendly-sub { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; }
+  footer { background: #0f0c08; color: rgba(255,255,255,0.3); padding: 24px 80px; display: flex; justify-content: space-between; align-items: center; font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.06em; }
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  @media (max-width: 1024px) { nav { padding: 16px 32px; } .hero { padding: 120px 40px 60px; } section { padding: 80px 40px; } .about-grid { grid-template-columns: 1fr; } .snapshot-grid { grid-template-columns: repeat(2,1fr); } .vibe-grid { grid-template-columns: 1fr; } .irl-capabilities { grid-template-columns: 1fr 1fr; } footer { padding: 24px 40px; } }
+  @media (max-width: 768px) { .nav-links { display: none; } .hero { padding: 100px 24px 48px; } section { padding: 60px 24px; } .exp-item { grid-template-columns: 1fr; gap: 8px; } .snapshot-grid { grid-template-columns: 1fr 1fr; } .pg4 { grid-template-columns: repeat(2,1fr); } .pg5 { grid-template-columns: repeat(3,1fr); } .irl-capabilities { grid-template-columns: 1fr; } footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="#" class="nav-logo">NM</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#irl-events">IRL Events</a></li><li><a href="#people">People</a></li><li><a href="#adventure">Adventures</a></li><li><a href="#vibe-coding">Vibe Coding</a></li><li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">// Head of Institutional &amp; Ecosystem Operations &middot; AcreBTC &middot; BTCFi</div>
+  <h1 class="hero-title">Institutional <em>adoption.</em><br>Ecosystem <em>operations.</em><br>At global scale.</h1>
+  <p class="hero-sub">Head of Institutional &amp; Ecosystem Operations at AcreBTC. From Web3 pioneer to protocol architect &mdash; building the infrastructure, trust frameworks, and institutional pathways that make Bitcoin vault adoption real.</p>
+  <div class="hero-tags">
+    <span class="tag active">AcreBTC</span><span class="tag rust">BTCFi</span><span class="tag">Threshold DAO</span><span class="tag">Institutional Ops</span><span class="tag">Ecosystem</span><span class="tag">IRL Events</span><span class="tag">Governance</span><span class="tag">Bitcoin</span>
+  </div>
+  <div class="hero-cta">
+    <a href="#contact" class="btn btn-primary">Book a Call &rarr;</a>
+    <a href="#experience" class="btn btn-outline">View Experience</a>
+  </div>
+  <div class="hero-bg-text">ACRE</div>
+</section>
+
+<hr class="divider">
+
+<section class="snapshot" id="snapshot">
+  <div class="section-label">// Career Snapshot</div>
+  <div class="snapshot-grid">
+    <div class="snap-card"><div class="snap-num">6<span>+</span></div><div class="snap-label">Years in Web3</div></div>
+    <div class="snap-card"><div class="snap-num">30<span>+</span></div><div class="snap-label">IRL Conferences</div></div>
+    <div class="snap-card"><div class="snap-num">8<span>+</span></div><div class="snap-label">Hackathons</div></div>
+    <div class="snap-card"><div class="snap-num">15<span>K</span></div><div class="snap-label">Items Shipped Globally</div></div>
+  </div>
+  <div class="brand-strip">
+    <span class="brand-pill highlight">AcreBTC</span><span class="brand-pill semi">Threshold DAO</span><span class="brand-pill">Keep Network</span><span class="brand-pill">Taho Wallet</span><span class="brand-pill">BTCFi</span><span class="brand-pill">ETHGlobal</span><span class="brand-pill">MSD &middot; ASU</span>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="about">
+  <div class="section-label">// About</div>
+  <div class="about-grid">
+    <div><img src="assets/image_001.jpg" alt="Nico Marotta" class="about-img reveal"></div>
+    <div class="about-content">
+      <h2 class="section-title">Infrastructure that<br><em>earns trust.</em></h2>
+      <p>Institutions allocate where infrastructure proves itself.</p>
+      <p>I&rsquo;ve spent the past six years operating at the intersection of digital assets and financial infrastructure &mdash; focused on building systems that meet institutional standards for trust, transparency, and execution.</p>
+      <p>My work spans governance design, ecosystem development, and global operational scaling &mdash; from structuring participation frameworks to leading international initiatives and representing protocols across major industry events.</p>
+      <p>As Head of Institutional &amp; Ecosystem Operations at <strong>AcreBTC</strong>, I focus on bridging institutional capital into Bitcoin-native yield infrastructure. This includes onboarding partners, developing ecosystem relationships, and building the operational and governance frameworks required to support long-term capital deployment.</p>
+      <p>I operate with a simple principle: <strong>infrastructure earns trust through consistency</strong> &mdash; technically, operationally, and in the market.</p>
+      <div class="origin-block">
+        <div class="origin-label">// Web3 Origin Story</div>
+        <div class="origin-text">Keep Network &rarr; Threshold DAO &rarr; Taho Wallet &rarr; Thesis.co &rarr; AcreBTC. A continuous thread from the earliest days of decentralized Bitcoin infrastructure, through DAO governance, to institutional ecosystem operations at global scale.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="experience">
+  <div class="section-label">// Experience</div>
+  <h2 class="section-title">The Work<br><em>in Detail.</em></h2>
+  <div class="exp-group-label">Web3 &amp; DAO</div>
+  <div class="exp-grid">
+    <div class="exp-item reveal">
+      <div class="exp-date">Jan 2026 &mdash; Present</div>
+      <div>
+        <div class="exp-title">Head of Institutional &amp; Ecosystem Operations <span class="badge badge-active">ACTIVE</span></div>
+        <div class="exp-org">AcreBTC &middot; Remote &middot; Full-time</div>
+        <div class="exp-desc">Promoted to lead institutional adoption and ecosystem development for AcreBTC&rsquo;s Bitcoin vault infrastructure. Own the end-to-end institutional onboarding pipeline &mdash; from initial partner engagement through governance integration and capital deployment. Build and maintain ecosystem relationships with institutional allocators, protocol partners, and industry organizations. Design and execute the operational frameworks, trust standards, and participation structures that support long-term institutional capital in Bitcoin-native yield products. Represent AcreBTC at global conferences and lead high-stakes stakeholder engagements.</div>
+        <div class="skill-tags"><span class="skill-tag primary">Institutional Ops</span><span class="skill-tag rust">Ecosystem Dev</span><span class="skill-tag">Governance</span><span class="skill-tag">BTCFi</span><span class="skill-tag">Partner Onboarding</span><span class="skill-tag">Capital Strategy</span></div>
+      </div>
+    </div>
+    <div class="exp-item reveal">
+      <div class="exp-date">Jan 2025 &mdash; Jan 2026</div>
+      <div>
+        <div class="exp-title">Community Lead <span class="badge badge-past">PAST</span></div>
+        <div class="exp-org">AcreBTC &middot; Remote &middot; Full-time</div>
+        <div class="exp-desc">Retained following Acre&rsquo;s spin-out from Thesis.co. Owned end-to-end community strategy across Discord, Telegram, LinkedIn, and X. Managed a global moderation team with clear ownership and accountability. Architected the governance framework and voting structure behind the Acre Security Council (ASC) and led quarterly ASC meetings. Supported voting, proposals, and protocol communications during key upgrades. Hosted weekly community calls, podcasts, and Twitter Spaces. Represented Acre at major global conferences and IRL events worldwide.</div>
+        <div class="skill-tags"><span class="skill-tag primary">Community Strategy</span><span class="skill-tag rust">Governance</span><span class="skill-tag">Discord</span><span class="skill-tag">BitcoinFi</span><span class="skill-tag">Security Council</span><span class="skill-tag">IRL Events</span></div>
+      </div>
+    </div>
+    <div class="exp-item reveal">
+      <div class="exp-date">Mar 2022 &mdash; Dec 2024</div>
+      <div>
+        <div class="exp-title">Elected DAO Contributor &amp; Community Manager <span class="badge badge-dao">DAO</span></div>
+        <div class="exp-org">Threshold DAO &middot; Remote &middot; Contract</div>
+        <div class="exp-desc">Elected by token holders to represent and grow the Threshold Network community. Managed Discord, Telegram, and social channels globally. Coordinated governance participation, proposal communications, and community education around tBTC. Represented Threshold at ETHDenver, ETH CC, Devcon Istanbul, Scaling Bitcoin, and more. Designed and produced swag, ran trade show booths, and served as a solo event operator.</div>
+        <div class="skill-tags"><span class="skill-tag primary">DAO Governance</span><span class="skill-tag">tBTC</span><span class="skill-tag">Community Ops</span><span class="skill-tag">Event Production</span><span class="skill-tag">Token Governance</span></div>
+      </div>
+    </div>
+    <div class="exp-item reveal">
+      <div class="exp-date">Jul 2021 &mdash; Mar 2022</div>
+      <div>
+        <div class="exp-title">Community Contributor <span class="badge badge-past">PAST</span></div>
+        <div class="exp-org">Taho Wallet (formerly Tally Ho) &middot; Remote &middot; Contract</div>
+        <div class="exp-desc">Contributed to community growth for Taho, the community-owned Web3 wallet. Built Discord infrastructure, supported user onboarding, and helped develop community voice and brand identity.</div>
+        <div class="skill-tags"><span class="skill-tag">Discord Growth</span><span class="skill-tag">Web3 Wallets</span><span class="skill-tag">User Onboarding</span></div>
+      </div>
+    </div>
+    <div class="exp-item reveal">
+      <div class="exp-date">Mar 2020 &mdash; Jul 2021</div>
+      <div>
+        <div class="exp-title">Web3 Pioneer &mdash; Early Testnet &amp; Hackathons <span class="badge badge-origin">ORIGIN</span></div>
+        <div class="exp-org">Keep Network / Foundational Web3 Experience &middot; Remote</div>
+        <div class="exp-desc">My Web3 origin story. Joined the Keep Network &ldquo;Playing for Keeps&rdquo; incentivized testnet in 2020 &mdash; one of the earliest participants in what would become Threshold Network. Awarded 50,000 KEEP tokens as a program winner for contributions including early tBTC test minting, node operations, and random beacon participation.</div>
+        <div class="skill-tags"><span class="skill-tag primary">OG Web3</span><span class="skill-tag">Keep Network</span><span class="skill-tag">tBTC Pioneer</span><span class="skill-tag">Node Operations</span><span class="skill-tag">ETHGlobal</span><span class="skill-tag">Hackathons</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="exp-group-label" style="margin-top:48px;">Education &amp; Background</div>
+  <div class="exp-grid">
+    <div class="exp-item reveal">
+      <div class="exp-date">2016 &mdash; 2020</div>
+      <div>
+        <div class="exp-title">Master of Science, Design</div>
+        <div class="exp-org">Arizona State University &middot; Tempe, AZ</div>
+        <div class="exp-desc">Graduate study in design and strategy, providing the analytical and visual communication foundation applied across community brand, content, and UX work in Web3.</div>
+        <div class="skill-tags"><span class="skill-tag">Digital Strategy</span><span class="skill-tag">UX Design</span><span class="skill-tag">Brand Identity</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="irl-section" id="irl-events">
+  <div class="section-label">// IRL Events &amp; Brand Experience</div>
+  <h2 class="section-title">Showing Up<br><em>In Person.</em></h2>
+  <p class="irl-intro">A core part of my value is physical presence and full-spectrum event operations. I&rsquo;ve organized, staffed, and represented projects at 30+ conferences across North America, Europe, and Asia &mdash; handling everything from international swag logistics to keynote delivery.</p>
+  <div class="irl-stats">
+    <div><div class="irl-stat-num">30<span>+</span></div><div class="irl-stat-label">Global Conferences</div></div>
+    <div><div class="irl-stat-num">15<span>K</span></div><div class="irl-stat-label">Items Shipped Single Event</div></div>
+    <div><div class="irl-stat-num">10<span>K</span></div><div class="irl-stat-label">Keynote Audience</div></div>
+    <div><div class="irl-stat-num">8<span>+</span></div><div class="irl-stat-label">Countries Represented In</div></div>
+  </div>
+  <div class="pg pg5">
+    <img src="assets/image_050.jpg" alt="EthCC Cannes Red Carpet 2025">
+    <img src="assets/image_051.jpg" alt="EthCC Cannes 2025">
+    <img src="assets/image_053.jpg" alt="EthCC Cannes 2025">
+    <img src="assets/image_054.jpg" alt="EthCC Cannes 2025">
+    <img src="assets/image_055.jpg" alt="EthCC Cannes 2025">
+  </div>
+  <div class="pg pg4 mt">
+    <img src="assets/image_056.jpg" alt="EthCC 2025">
+    <img src="assets/image_058.jpg" alt="ETH Event 2025">
+    <img src="assets/image_059.jpg" alt="ETH Event 2025">
+    <img src="assets/image_060.jpg" alt="ETH Event 2025">
+  </div>
+  <div class="pg pg4 mt">
+    <img src="assets/image_061.jpg" alt="Conference 2025">
+    <img src="assets/image_062.jpg" alt="Conference 2025">
+    <img src="assets/image_063.jpg" alt="Conference 2025">
+    <img src="assets/image_064.jpg" alt="Conference 2025">
+  </div>
+  <div class="pg pg5 mt">
+    <img src="assets/image_065.jpg" alt="Event 2025">
+    <img src="assets/image_066.jpg" alt="Event 2025">
+    <img src="assets/image_067.jpg" alt="Event 2025">
+    <img src="assets/image_068.jpg" alt="Event 2025">
+    <img src="assets/image_069.jpg" alt="Event 2025">
+  </div>
+  <div class="pg pg5 mt">
+    <img src="assets/image_070.jpg" alt="Event 2024">
+    <img src="assets/image_071.jpg" alt="Event 2024">
+    <img src="assets/image_072.jpg" alt="Event 2024">
+    <img src="assets/image_073.jpg" alt="Event 2024">
+    <img src="assets/image_074.jpg" alt="Event 2024">
+  </div>
+  <div class="pg pg4 mt">
+    <img src="assets/image_075.jpg" alt="Event 2024">
+    <img src="assets/image_076.jpg" alt="Event 2024">
+    <img src="assets/image_077.jpg" alt="Event 2024">
+    <img src="assets/image_078.jpg" alt="Event 2024">
+  </div>
+  <div class="pg pg5 mt">
+    <img src="assets/image_079.jpg" alt="Event 2024">
+    <img src="assets/image_080.jpg" alt="Event 2024">
+    <img src="assets/image_081.jpg" alt="Event 2024">
+    <img src="assets/image_082.jpg" alt="ETH CC Jump">
+    <img src="assets/image_083.jpg" alt="Event 2024">
+  </div>
+  <div class="pg pg4 mt">
+    <img src="assets/image_084.jpg" alt="Event 2024">
+    <img src="assets/image_085.jpg" alt="Event 2024">
+    <img src="assets/image_086.jpg" alt="ETH Denver 2023">
+    <img src="assets/image_087.jpg" alt="ETH Denver 2023">
+  </div>
+  <div class="irl-capabilities">
+    <div class="cap-card"><div class="cap-title">Public Speaking</div><div class="cap-desc">Keynote delivery to 10K+ audiences. Podcast hosting and guest appearances. Twitter Spaces moderation. Comfortable on stage, on camera, and on the fly.</div></div>
+    <div class="cap-card"><div class="cap-title">Logistics &amp; Production</div><div class="cap-desc">International shipping coordination for 15K+ items per event. Trade show booth design, setup, and teardown. Solo event deployment when budget requires it.</div></div>
+    <div class="cap-card"><div class="cap-title">Brand &amp; Swag Design</div><div class="cap-desc">Concept and production of event t-shirts, hats, branded giveaways. Logo artwork, press releases, and event collateral.</div></div>
+    <div class="cap-card"><div class="cap-title">Ecosystem Relations</div><div class="cap-desc">Coordinate with co-sponsors, event hosts, and partner projects to maximize shared exposure. Build relationships that outlast conferences.</div></div>
+    <div class="cap-card"><div class="cap-title">Live Content</div><div class="cap-desc">Livestreaming from events. Real-time social updates. On-the-ground content creation that extends event reach to digital audiences globally.</div></div>
+    <div class="cap-card"><div class="cap-title">Global Mobility</div><div class="cap-desc">Comfortable traveling anywhere in the world to represent my project. Operated across North America, Europe, and Southeast Asia.</div></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="people">
+  <div class="section-label">// Connections &amp; Community</div>
+  <h2 class="section-title">People &amp;<br><em>Protocol.</em></h2>
+  <p class="adv-intro">The relationships built across six years of showing up &mdash; builders, founders, ecosystem partners, and the communities that power them.</p>
+  <div class="pg pg4">
+    <img src="assets/image_088.jpg" alt="People 2025">
+    <img src="assets/image_089.jpg" alt="People 2025">
+    <img src="assets/image_090.jpg" alt="People 2025">
+    <img src="assets/image_091.jpg" alt="People 2025">
+  </div>
+  <div class="pg pg4 mt">
+    <img src="assets/image_092.jpg" alt="People 2025">
+    <img src="assets/image_093.jpg" alt="People 2025">
+    <img src="assets/image_094.jpg" alt="People 2025">
+    <img src="assets/image_095.jpg" alt="People 2024">
+  </div>
+  <div class="pg pg4 mt">
+    <img src="assets/image_096.jpg" alt="People 2024">
+    <img src="assets/image_097.jpg" alt="People 2024">
+    <img src="assets/image_098.jpg" alt="People 2024">
+    <img src="assets/image_118.jpg" alt="People 2024">
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="adventure">
+  <div class="section-label">// Adventure</div>
+  <h2 class="section-title">Beyond the<br><em>Booth.</em></h2>
+  <p class="adv-intro">Building global Web3 communities requires understanding the cultures that power them. I don&rsquo;t just attend events &mdash; I immerse myself in local scenes, make genuine friendships, and bring those lived experiences back into how I build and communicate.</p>
+  <div class="pg pg5">
+    <img src="assets/image_099.jpg" alt="Adventure 2025">
+    <img src="assets/image_100.jpg" alt="Adventure 2025">
+    <img src="assets/image_101.jpg" alt="Adventure 2025">
+    <img src="assets/image_102.jpg" alt="Adventure 2025">
+    <img src="assets/image_103.jpg" alt="Adventure 2025">
+  </div>
+  <div class="pg pg5 mt">
+    <img src="assets/image_104.jpg" alt="Adventure 2024">
+    <img src="assets/image_105.jpg" alt="Adventure 2024">
+    <img src="assets/image_106.jpg" alt="Adventure 2024">
+    <img src="assets/image_107.jpg" alt="Adventure 2024">
+    <img src="assets/image_108.jpg" alt="Adventure 2024">
+  </div>
+  <div class="pg pg5 mt">
+    <img src="assets/image_109.jpg" alt="Adventure 2024">
+    <img src="assets/image_110.jpg" alt="Adventure 2024">
+    <img src="assets/image_111.jpg" alt="Adventure 2024">
+    <img src="assets/image_112.jpg" alt="Adventure 2024">
+    <img src="assets/image_113.jpg" alt="Adventure 2024">
+  </div>
+  <div class="pg pg4 mt">
+    <img src="assets/image_114.jpg" alt="Adventure 2023">
+    <img src="assets/image_115.jpg" alt="Adventure 2023">
+    <img src="assets/image_116.jpg" alt="Adventure 2023">
+    <img src="assets/image_117.jpg" alt="Adventure 2023">
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="vibe-coding">
+  <div class="section-label">// AI-Assisted Building</div>
+  <h2 class="section-title">AI-Assisted Systems &amp;<br><em>Agentic Workflows.</em></h2>
+  <div class="vibe-grid">
+    <div>
+      <p class="vibe-intro">I&rsquo;ve been diving into the frontier where AI meets building &mdash; using vibe coding workflows and autonomous agent architecture to prototype faster, think in systems, and ship ideas that would have taken months in days.</p>
+      <p class="vibe-intro">I built the OpenClaw agent from scratch and am developing a series of agent workflows to create an autonomous community operations team.</p>
+      <p class="vibe-intro">I regularly evaluate AI solutions &mdash; including Google Gemini, Perplexity, Claude, and ChatGPT &mdash; and return executive-level reports with implementation recommendations.</p>
+      <p class="vibe-intro" style="font-size:0.88rem;font-style:italic;color:#a8957a;">This portfolio was built through a live vibe coding session with Claude.</p>
+      <div class="project-list">
+        <div class="project-item"><span class="project-name">OpenClaw Agent</span><span class="project-tech">Claude &middot; Python &middot; Custom Build</span></div>
+        <div class="project-item"><span class="project-name">Autonomous Agent Team</span><span class="project-tech">Multi-agent Pipeline &middot; Protocol Integration</span></div>
+        <div class="project-item"><span class="project-name">Community Intelligence Agent</span><span class="project-tech">Claude &middot; Python &middot; Discord API</span></div>
+        <div class="project-item"><span class="project-name">DAO Governance Summarizer</span><span class="project-tech">LLM &middot; Snapshot API</span></div>
+        <div class="project-item"><span class="project-name">Acre Community Ops Automation</span><span class="project-tech">n8n &middot; Discord API</span></div>
+        <div class="project-item"><span class="project-name">AI Platform Evaluation Reports</span><span class="project-tech">Gemini &middot; Perplexity &middot; Claude &middot; ChatGPT</span></div>
+        <div class="project-item"><span class="project-name">This Portfolio Site</span><span class="project-tech">Claude &middot; Vibe Coded &middot; HTML</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="terminal">
+        <div class="terminal-bar"><div class="t-dot red"></div><div class="t-dot yellow"></div><div class="t-dot green"></div></div>
+        <div class="t-line" style="color:#fbbf24;">$ whoami</div>
+        <div class="t-line" style="color:#6b7280;"># nico marotta &middot; institutional ops &rarr; ecosystem builder</div>
+        <div class="t-line">&nbsp;</div>
+        <div class="t-line" style="color:#fbbf24;">$ web3_journey</div>
+        <div class="t-line" style="color:var(--rust-light);">&rarr; 2020: Keep Network testnet pioneer</div>
+        <div class="t-line" style="color:var(--rust-light);">&rarr; 2021: Taho Wallet contributor</div>
+        <div class="t-line" style="color:var(--rust-light);">&rarr; 2022: Threshold DAO elected contributor</div>
+        <div class="t-line" style="color:var(--rust-light);">&rarr; 2024: Thesis &rarr; AcreBTC community lead</div>
+        <div class="t-line" style="color:var(--rust-light);">&rarr; 2026: AcreBTC &rarr; Head of Institutional &amp; Ecosystem Ops</div>
+        <div class="t-line">&nbsp;</div>
+        <div class="t-line" style="color:#fbbf24;">$ status</div>
+        <div class="t-line" style="color:#4ade80;">&bull; actively building</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="contact" id="contact">
+  <div class="section-label" style="display:flex;justify-content:center;">// Get in Touch</div>
+  <h2 class="section-title" style="text-align:center;margin-bottom:16px;">Let&rsquo;s Build<br><em>Something.</em></h2>
+  <p class="contact-sub">Open to institutional partnerships, ecosystem collaborations, advisory roles, and speaking engagements. Based remotely, available globally.</p>
+  <div style="margin-bottom:32px;">
+    <a href="https://calendly.com/nico186" target="_blank" class="calendly-cta">Book a Call &mdash; calendly.com/nico186</a>
+    <br><span class="calendly-sub">15 or 30 min &middot; No prep needed &middot; Let&rsquo;s talk</span>
+  </div>
+  <div class="social-grid">
+    <a href="https://x.com/nico186_" target="_blank" class="social-link">X &mdash; @nico186_</a>
+    <a href="https://discord.gg/nico186" target="_blank" class="social-link">Discord &mdash; discord.gg/nico186</a>
+    <a href="https://www.linkedin.com/in/nico-marotta-msd/" target="_blank" class="social-link">LinkedIn</a>
+    <a href="https://t.me/Originalnico186" target="_blank" class="social-link">Telegram &mdash; @Originalnico186</a>
+    <a href="https://github.com/nico186" target="_blank" class="social-link">GitHub</a>
+    <a href="https://linktr.ee/nico186" target="_blank" class="social-link">Linktree</a>
+    <a href="mailto:nico@nico186.com" class="social-link">Email &mdash; nico@nico186.com</a>
+  </div>
+</section>
+
+<footer>
+  <span>nico186.com &middot; Nico Marotta &middot; Head of Institutional &amp; Ecosystem Operations</span>
+  <span>Built with Claude &middot; 2026</span>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    observer.observe(el);
+  });
+});
+</script>
+</body>
+</html>
